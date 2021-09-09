@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="249.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controller">
    <children>
-      <Pane layoutX="-7.0" layoutY="-8.0" prefHeight="302.0" prefWidth="545.0">
+      <Pane layoutX="-7.0" layoutY="-8.0" prefHeight="267.0" prefWidth="545.0">
          <children>
             <Button fx:id="submitBtn" layoutX="243.0" layoutY="188.0" mnemonicParsing="false" onAction="#submit" text="Buscar" />
             <Label layoutX="189.0" layoutY="40.0" text="Busca Cep">

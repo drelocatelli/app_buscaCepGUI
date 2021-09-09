@@ -1,11 +1,11 @@
 package gui;
 
-import java.awt.Event;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
@@ -52,10 +53,10 @@ public class Controller implements Initializable{
 	
 	@FXML
 	public void formHandle(KeyEvent event) {
-		
 		// se pressionado enter
 		if(event.getCode().equals(KeyCode.ENTER)) {
-			System.out.println("OK");
+			// clica botao
+			submitBtn.fire();
 		}
 		
 	}
@@ -64,12 +65,13 @@ public class Controller implements Initializable{
 	public void submit(ActionEvent event) throws IOException {
 
 		cep = cepInput.getText();
-		
+				
 		if(!cep.isEmpty()) {
 			String searchMsg = String.format("Busca por: %s", cep);
 	
 			searched.setText(searchMsg);
 			
+			// troca cena
 			this.switchScene(event, "/gui/Result.fxml");
 			
 		}else {

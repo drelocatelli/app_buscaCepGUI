@@ -2,17 +2,18 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane minHeight="120.0" minWidth="120.0" prefHeight="322.0" prefWidth="639.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ResultController">
    <children>
+      <Pane fx:id="panel" layoutX="40.0" layoutY="137.0" prefHeight="200.0" prefWidth="532.0" />
       <Label layoutX="216.0" layoutY="36.0" text="RESULTADO">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <Label fx:id="result" layoutX="47.0" layoutY="102.0" text="resultado aqui" wrapText="true">
+      <Label fx:id="resultado" layoutX="40.0" layoutY="103.0" text="Resultado">
          <font>
             <Font size="20.0" />
          </font>

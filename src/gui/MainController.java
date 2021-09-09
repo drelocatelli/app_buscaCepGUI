@@ -5,51 +5,27 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import javafx.stage.Window;
 
 
-public class Controller implements Initializable{
-	
-	private Stage stage;
-	private Scene scene;
-	private Parent root;
+public class MainController implements Initializable{
 	
 	@FXML
-	private TextField cepInput;
+	public TextField cepInput;
 	
 	@FXML
 	private Button submitBtn;
 	@FXML
 	private Label searched;
 	
-	private String cep;
+	public String cep;
 	
-	public void switchScene(ActionEvent event, String src) throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource(src));
-		// source scene by button
-		Node source = (Node) event.getSource();
-		stage = (Stage) (source).getScene().getWindow();
-		root = loader.load();
-		scene = new Scene(root);
-		
-		stage.setScene(scene);
-		stage.setResizable(false);
-		stage.show();
-	}
 	
 	@FXML
 	public void formHandle(KeyEvent event) {
@@ -66,18 +42,19 @@ public class Controller implements Initializable{
 
 		cep = cepInput.getText();
 				
-		if(!cep.isEmpty()) {
+		if( !(cep.isEmpty()) ) {
 			String searchMsg = String.format("Busca por: %s", cep);
 	
 			searched.setText(searchMsg);
 			
 			// troca cena
-			this.switchScene(event, "/gui/Result.fxml");
+			String args[] = {cep};
+			ResultController resultController = new ResultController();
+			resultController.createScene(event, args);
 			
 		}else {
 			searched.setText("");
 		}
-
 		
 	}
 	

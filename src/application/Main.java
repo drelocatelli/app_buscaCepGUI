@@ -30,7 +30,7 @@ public class Main extends Application {
 			this.primaryStage.setTitle("Busca CEP");
 			this.primaryStage.setScene(scene);
 			this.primaryStage.show();
-						
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

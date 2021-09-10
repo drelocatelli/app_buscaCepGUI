@@ -43,7 +43,7 @@ public class MainController implements Initializable{
 		cep = cepInput.getText();
 				
 		if( !(cep.isEmpty()) ) {
-			String searchMsg = String.format("Busca por: %s", cep);
+			String searchMsg = String.format("Não foi possível buscar por: %s", cep);
 	
 			searched.setText(searchMsg);
 			
